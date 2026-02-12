@@ -121,17 +121,12 @@ public class AccountService {
 
     public List<AccountDto> findAll() {
         try (Session session = sessionFactory.openSession()) {
-            List<AccountDto> result = new ArrayList<>();
-            
-            List<BankAccount> bankAccounts = session.findAll(BankAccount.class);
-            List<SavingsAccount> savingsAccounts = session.findAll(SavingsAccount.class);
-            List<InvestmentAccount> investmentAccounts = session.findAll(InvestmentAccount.class);
-            
-            bankAccounts.forEach(a -> result.add(BankAccountDto.fromEntity(a)));
-            savingsAccounts.forEach(a -> result.add(SavingsAccountDto.fromEntity(a)));
-            investmentAccounts.forEach(a -> result.add(InvestmentAccountDto.fromEntity(a)));
-            
-            return result;
+
+            List<Account> accounts = session.findAll(Account.class);
+
+            return accounts.stream()
+                    .map(AccountDto::fromEntity)
+                    .collect(Collectors.toList());
         }
     }
 

@@ -5,19 +5,12 @@ import pl.edu.agh.dp.core.api.Orm;
 import pl.edu.agh.dp.core.api.SessionFactory;
 import pl.edu.agh.dp.entity.*;
 
-/**
- * Konfiguracja ORM dla aplikacji demo.
- * W prawdziwej aplikacji Spring byłby to @Configuration bean.
- */
+
 @org.springframework.context.annotation.Configuration
 public class OrmConfig {
 
     private static SessionFactory sessionFactory;
 
-    /**
-     * Inicjalizuje i zwraca SessionFactory jako singleton.
-     * Demonstruje konfigurację ORM z różnymi encjami.
-     */
     public static synchronized SessionFactory getSessionFactory() {
         if (sessionFactory == null) {
             // Pobierz konfigurację ze zmiennych środowiskowych lub użyj domyślnych
@@ -58,9 +51,6 @@ public class OrmConfig {
         return sessionFactory;
     }
 
-    /**
-     * Zamyka SessionFactory - do użycia przy zamykaniu aplikacji.
-     */
     public static synchronized void shutdown() {
         if (sessionFactory != null) {
             sessionFactory = null;
