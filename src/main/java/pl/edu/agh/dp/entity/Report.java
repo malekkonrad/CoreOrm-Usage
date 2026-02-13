@@ -13,7 +13,7 @@ import java.time.LocalDate;
 @Setter
 @NoArgsConstructor
 @DiscriminatorValue("REPORT")
-@Entity
+//@Entity
 public class Report extends Document {
 
     private String reportType;

@@ -11,7 +11,7 @@ import pl.edu.agh.dp.core.mapping.annotations.*;
 @Getter
 @Setter
 @NoArgsConstructor
-@Entity
+//@Entity
 public class SmsNotification extends Notification {
 
     @Column(nullable = false)

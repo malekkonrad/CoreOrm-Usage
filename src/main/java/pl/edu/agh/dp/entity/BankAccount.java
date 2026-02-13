@@ -14,7 +14,7 @@ import pl.edu.agh.dp.core.mapping.annotations.*;
 @Getter
 @Setter
 @NoArgsConstructor
-@Entity
+//@Entity
 public class BankAccount extends Account {
 
     @Column(nullable = false)

@@ -16,7 +16,7 @@ import java.math.BigDecimal;
 @Getter
 @Setter
 @NoArgsConstructor
-@Entity
+//@Entity
 public class InvestmentAccount extends Account {
 
     private String riskLevel; // low, medium, high

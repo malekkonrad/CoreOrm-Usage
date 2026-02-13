@@ -3,7 +3,9 @@ package pl.edu.agh.dp.config;
 import pl.edu.agh.dp.core.api.Configuration;
 import pl.edu.agh.dp.core.api.Orm;
 import pl.edu.agh.dp.core.api.SessionFactory;
-import pl.edu.agh.dp.entity.*;
+import pl.edu.agh.dp.test.Persom;
+import pl.edu.agh.dp.test.Student;
+import pl.edu.agh.dp.test.Subject;
 
 
 @org.springframework.context.annotation.Configuration
@@ -23,28 +25,33 @@ public class OrmConfig {
                     .setProperty("db.user", dbUser)
                     .setProperty("db.password", dbPassword)
                     .setProperty("db.driver", "org.postgresql.Driver")
-                    .setProperty("orm.schema.auto", "create")
+                    .setProperty("orm.schema.auto", "drop-create");
+//                    .scanPackages("pl.edu.agh.dp", "pl.edu.agh.dp.test");
                     // Rejestracja wszystkich encji
-                    .register(
-                            // Dziedziczenie JOINED - Account/BankAccount/SavingsAccount/InvestmentAccount
-                            Account.class,
-                            BankAccount.class,
-                            SavingsAccount.class,
-                            InvestmentAccount.class,
-                            // Relacje - Employee/Department
-                            Employee.class,
-                            Department.class,
-                            // Dziedziczenie SINGLE_TABLE - Document/Invoice/Report
-                            Document.class,
-                            Invoice.class,
-                            Report.class,
-                            Curriculum.class,
-                            // Dziedziczenie TABLE_PER_CLASS - Notification
-                            Notification.class,
-                            EmailNotification.class,
-                            SmsNotification.class,
-                            PushNotification.class
-                    );
+//                    .register(
+//                            // Dziedziczenie JOINED - Account/BankAccount/SavingsAccount/InvestmentAccount
+////                            Account.class,
+////                            BankAccount.class,
+////                            SavingsAccount.class,
+////                            InvestmentAccount.class,
+////                            // Relacje - Employee/Department
+////                            Employee.class,
+////                            Department.class,
+////                            // Dziedziczenie SINGLE_TABLE - Document/Invoice/Report
+////                            Document.class,
+////                            Invoice.class,
+////                            Report.class,
+////                            Curriculum.class,
+////                            // Dziedziczenie TABLE_PER_CLASS - Notification
+////                            Notification.class,
+////                            EmailNotification.class,
+////                            SmsNotification.class,
+////                            PushNotification.class,
+//
+////                            Persom.class,
+////                            Student.class,
+////                            Subject.class
+//                    );
 
             sessionFactory = config.buildSessionFactory();
         }

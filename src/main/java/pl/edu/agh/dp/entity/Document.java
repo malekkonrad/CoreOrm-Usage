@@ -22,7 +22,7 @@ import java.util.List;
 @NoArgsConstructor
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorValue("DOCUMENT")
-@Entity
+//@Entity
 public class Document {
     @Id(autoIncrement = true)
     private Long id;

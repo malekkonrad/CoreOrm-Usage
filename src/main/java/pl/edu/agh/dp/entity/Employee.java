@@ -21,7 +21,7 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-@Entity
+//@Entity
 public class Employee {
 
     @Id(autoIncrement = true)
